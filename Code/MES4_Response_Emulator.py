@@ -52,7 +52,7 @@ def make_response(req: dict) -> str:
 
     match message_type:
         case [100, 4]:  # GetFirstOpForRsc
-            if counter == 0:
+            if counter <= 2:
                 counter += 1
                 data = RESPONSES.get((mclass, mno))
                 ono = data["ONo"] if data else ono
