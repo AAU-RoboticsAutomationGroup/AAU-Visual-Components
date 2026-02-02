@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="4.0.0.0" runtimeid="3.5.17.0" libversion="3.5.17.0" compiler="3.5.17.0" lmm="3.5.17.0" profile="CODESYS V3.5 SP17+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <ProjectInfo name="Smartlab_PLC_MES_VisualComponents_demo" devicename="Device_1" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BIT_X_0" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="0" />
+    <TypeSimple name="T_BIT_X_1" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="1" />
+    <TypeSimple name="T_BIT_X_2" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="2" />
+    <TypeSimple name="T_BIT_X_3" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="3" />
+    <TypeSimple name="T_BIT_X_4" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="4" />
+    <TypeSimple name="T_BIT_X_5" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="5" />
+    <TypeSimple name="T_BIT_X_6" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="6" />
+    <TypeSimple name="T_BIT_X_7" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="7" />
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_UDINT" size="4" swapsize="4" typeclass="UDInt" iecname="UDINT" />
+    <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
+    <TypeUserDef name="T_StopperWithMes" size="15" nativesize="20788" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="StopperWithMes">
+      <UserDefElement iecname="RFID_ID" type="T_UINT" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="RFID_ONo" type="T_UDINT" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="RFID_OPos" type="T_UINT" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="xCarrierAvailable" type="T_BOOL" byteoffset="10" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="RFID_OpNo" type="T_UINT" byteoffset="12" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Start_Op" type="T_BOOL" byteoffset="14" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="FBs">
+        <Node name="stpStopper1" type="T_StopperWithMes" access="Read" />
+      </Node>
+      <Node name="Transport">
+        <Node name="xBG20" type="T_BIT_X_0" access="Read" directaddress="%IX1.0" />
+        <Node name="xBG21" type="T_BIT_X_1" access="Read" directaddress="%IX1.1" />
+        <Node name="xBG22" type="T_BIT_X_2" access="Read" directaddress="%IX1.2" />
+        <Node name="xBG23" type="T_BIT_X_3" access="Read" directaddress="%IX1.3" />
+        <Node name="xBG24" type="T_BIT_X_4" access="Read" directaddress="%IX1.4" />
+        <Node name="xEmg" type="T_BIT_X_0" access="Read" directaddress="%IX0.0" />
+        <Node name="xMB20" type="T_BIT_X_0" access="ReadWrite" directaddress="%QX1.0" />
+        <Node name="xQA1_LEFT" type="T_BIT_X_5" access="ReadWrite" directaddress="%QX0.5" />
+        <Node name="xQA1_RIGHT" type="T_BIT_X_4" access="ReadWrite" directaddress="%QX0.4" />
+        <Node name="xQA1_SLOW" type="T_BIT_X_6" access="ReadWrite" directaddress="%QX0.6" />
+        <Node name="xQA1_STOP" type="T_BIT_X_7" access="ReadWrite" directaddress="%QX0.7" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>

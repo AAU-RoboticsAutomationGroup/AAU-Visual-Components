@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="4.0.0.0" runtimeid="3.5.17.0" libversion="3.5.17.0" compiler="3.5.17.0" lmm="3.5.17.0" profile="CODESYS V3.5 SP17+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <ProjectInfo name="Smartlab_PLC_MES_VisualComponents_demo" devicename="Device_2" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_UDINT" size="4" swapsize="4" typeclass="UDInt" iecname="UDINT" />
+    <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
+    <TypeUserDef name="T_StopperWithMes" size="15" nativesize="20788" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="StopperWithMes">
+      <UserDefElement iecname="RFID_ID" type="T_UINT" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="RFID_ONo" type="T_UDINT" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="RFID_OPos" type="T_UINT" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="xCarrierAvailable" type="T_BOOL" byteoffset="10" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="RFID_OpNo" type="T_UINT" byteoffset="12" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Start_Op" type="T_BOOL" byteoffset="14" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="FBs">
+        <Node name="stpStopper1" type="T_StopperWithMes" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
